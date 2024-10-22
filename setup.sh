@@ -28,5 +28,5 @@ if ! command -v cabocha 2>&1 >/dev/null; then
 fi
 
 if [ ! -f "ai.ja.txt.parsed" ]; then
-    cabocha "ai.ja.txt" -o "ai.ja.txt.parsed"
+    mecab ai.ja.txt | cabocha -I1 -O2 | cabocha -I2 -O3 | cabocha -f1 -I3 -O4 -o ai.ja.txt.parsed
 fi
