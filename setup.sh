@@ -3,6 +3,10 @@
 mkdir -p data
 cd data
 
+if [ ! -f "popular-names.txt" ]; then
+    wget "https://nlp100.github.io/data/popular-names.txt"
+fi
+
 if [ ! -f "neko.txt" ]; then
     wget https://nlp100.github.io/data/neko.txt
 fi
