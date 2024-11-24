@@ -48,3 +48,9 @@ fi
 if [ ! -f "ch5-47.parsed" ]; then
     echo "また、自らの経験を元に学習を行う強化学習という手法もある。" | mecab | cabocha -I1 -O2 | cabocha -I2 -O3 | cabocha -f1 -I3 -O4 -o "ch5-47.parsed"
 fi
+
+if [ ! -f "news+aggregator.zip" ]; then
+    wget https://archive.ics.uci.edu/static/public/359/news+aggregator.zip
+    mkdir -p news
+    unzip news+aggregator.zip -d news
+fi
