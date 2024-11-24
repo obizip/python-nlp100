@@ -38,4 +38,13 @@ fi
 
 if [ ! -f "ai.ja.txt.parsed" ]; then
     mecab ai.ja.txt | cabocha -I1 -O2 | cabocha -I2 -O3 | cabocha -f1 -I3 -O4 -o ai.ja.txt.parsed
+
+fi
+
+if [ ! -f "ch5_example.parsed" ]; then
+    echo "ジョン・マッカーシーはAIに関する最初の会議で人工知能という用語を作り出した。" | mecab | cabocha -I1 -O2 | cabocha -I2 -O3 | cabocha -f1 -I3 -O4 -o "ch5_example.parsed"
+fi
+
+if [ ! -f "ch5-47.parsed" ]; then
+    echo "また、自らの経験を元に学習を行う強化学習という手法もある。" | mecab | cabocha -I1 -O2 | cabocha -I2 -O3 | cabocha -f1 -I3 -O4 -o "ch5-47.parsed"
 fi
